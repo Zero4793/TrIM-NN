@@ -1,6 +1,6 @@
 The recreaction/improvement of my old AI-NN project in processing now ported to pygame.
 Aim to remake evolution/boid sim and maybe others.
-Aim to implement my unique TrIM NN which i seen nowhere else
+Aim to implement my unique TrIM NN which i have seen nowhere else
 
 # TrIM
 Transient Itterative Memory

@@ -54,7 +54,7 @@ class Main:
 		if len(self.boids) < 64:
 			self.boids.append(deepcopy(self.boids[0]))
 			self.boids[-1].exist = True
-			self.boids[-1].mutate(0.1)
+			self.boids[-1].mutate(0.5)
 
 	def display(self):
 		for boid in self.boids:

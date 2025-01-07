@@ -5,16 +5,16 @@ class Brain:
 		self.I: list[Node] = [Node() for _ in range(Input)]
 		self.M: list[Node] = [Node() for _ in range(Memory)]
 		self.P: list[list[Node]] = [[] for _ in range(Process[0])]
-		self.P[0] = [Node(self.I+self.M, mutate) for _ in range(Process[1])]
+		self.P[0] = [Node(self.M, mutate) for _ in range(Process[1])] #add I
 		for i in range(1, Process[0]):
 			self.P[i] = [Node(self.P[i-1], mutate) for _ in range(Process[1])]
 		self.O: list[Node] = [Node(self.P[-1], mutate) for _ in range(Output)]
-		for m in self.M:
-			m.update(self.P[-1], mutate)
+		for node in self.M:
+			node.update(self.P[-1], mutate)
 
 
 	def mutate(self,mutate:float) -> None:
-		for node in self.I+self.M+self.O:
+		for node in self.I+self.O+self.M:
 			node.mutate(mutate)
 		for layer in self.P:
 			for node in layer:

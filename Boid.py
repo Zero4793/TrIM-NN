@@ -6,7 +6,7 @@ from Brain import Brain
 class Boid:
 	def __init__(self):
 		self.exist = True
-		self.brain = Brain(2, (2, 4), 6, 0, random()/10)
+		self.brain = Brain(2, (2, 4), 6, 6, random()/10)
 
 
 	def process(self):
